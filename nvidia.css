@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+    --primary-color: #76b900;
+    --text-dark: #1e1e1e;
+    --text-light: #ffffff;
+    --extra-light: #e3e3e3;
+    --max-width: 1300px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+input::placeholder {
+    color: var(--extra-light);
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("wp2921506-nvidia-graphics-hd-wallpapers.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 16px 32px;
+    transition: background-color 0.3s ease;
+}
+
+.nav__content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__logo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav__links .link a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nav__links .link a:hover {
+    color: var(--primary-color);
+}
+
+.search__box {
+    padding: 0.5rem 0;
+    border-bottom: 2px solid var(--extra-light);
+    display: flex;
+    align-items: center;
+}
+
+.search__box input {
+    color: var(--text-light);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+.search__box i {
+    color: var(--extra-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 2rem;
+    padding-top: 100px;
+    position: relative;
+}
+
+.container__left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.container__left .content {
+    max-width: 450px;
+    display: grid;
+    gap: 1rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.content h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.content p {
+    color: var(--text-light);
+}
+
+.btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.btns button {
+    padding: 0.5rem 2rem;
+    color: var(--text-light);
+    font-size: 1rem;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid var(--text-light);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.discover__more {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+button.explore__products:hover {
+    background-color: var(--text-light);
+    color: var(--primary-color);
+}
+
+.chevrons {
+    display: flex;
+    gap: 1rem;
+}
+
+.chevrons span {
+    height: 40px;
+    width: 40px;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid var(--text-light);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.chevrons span:hover {
+    background-color: var(--primary-color);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 1rem 0;
+    transition: background-color 0.3s ease;
+}
+
+.footer__content {
+    text-align: center;
+    color: var(--text-light);
+}
+
+.social__icons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social__icons li a {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    transition: color 0.3s;
+}
+
+.social__icons li a:hover {
+    color: var(--primary-color);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content > * {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.content h1 { animation-delay: 0.2s; }
+.content p { animation-delay: 0.4s; }
+.btns { animation-delay: 0.6s; }
+.chevrons { animation-delay: 0.8s; }
+
+@media (max-width: 768px) {
+    nav {
+        padding: 16px;
+    }
+
+    .nav__links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .nav__links.active {
+        display: flex;
+    }
+
+    .nav__links .link {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .search__box {
+        display: none;
+    }
+
+    .menu__toggle {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--text-light);
+        cursor: pointer;
+    }
+
+    .container {
+        padding-top: 80px;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+
+    .btns {
+        flex-direction: column;
+    }
+
+    .btns button {
+        width: 100%;
+    }
+}
